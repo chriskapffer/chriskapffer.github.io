@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 	body {
-		background-color: #eeeeee;
+		background: rgba(232,245,247,1);
+		background: -moz-linear-gradient(-45deg, rgba(232,245,247,1) 0%, rgba(221,221,221,1) 100%);
+		background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(232,245,247,1)), color-stop(100%, rgba(221,221,221,1)));
+		background: -webkit-linear-gradient(-45deg, rgba(232,245,247,1) 0%, rgba(221,221,221,1) 100%);
+		background: -o-linear-gradient(-45deg, rgba(232,245,247,1) 0%, rgba(221,221,221,1) 100%);
+		background: -ms-linear-gradient(-45deg, rgba(232,245,247,1) 0%, rgba(221,221,221,1) 100%);
+		background: linear-gradient(135deg, rgba(232,245,247,1) 0%, rgba(221,221,221,1) 100%);
 		color: #336699;
+		text-align: center;
+		font-family: 'Raleway', sans-serif;
 	}
 	h4 {
 		font-style: italic;
-		text-align: center;
 	}
-	p {
-		text-align: center;
+	a:visited {
+    	color: #444444;
 	}
-	.content {
+	.container {
 		margin: auto;
 		position: absolute;
-		top: 40%; left: 0; bottom: 0; right: 0;
+		top: 35%; left: 10%; bottom: 0; right: 10%;
+	}
+	.qoute-author {
+		position: relative;
+		margin: -10px 0 40px 0;
+		text-align: right;
+		right: 30%;
 	}
 	.so-flair-button {
 		position: fixed;
@@ -26,14 +42,44 @@
 	</style>
 </head>
 <body>
-	<div class="content">
-		<h4>Coming soon!</h4>
-		<p>In the meantime check out my <a href="https://github.com/chriskapffer">github profile</a>.</p>
+	<div class="container">
+		<h4 class="quote-content">"a nerdy quotation to get your attention"</h4>
+		<p class="qoute-author">- by some author</p>
+		<p>Refresh the page for another qoute. If you are here to check out some of my code have a look at my <a href="https://github.com/chriskapffer">profile</a>.</p>
 	</div>
 	<div class="so-flair-button">
-		<a href="http://stackoverflow.com/users/782862/christoph">
-			<img src="http://stackoverflow.com/users/flair/782862.png" width="208" height="58" alt="profile for christoph at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for christoph at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+		<a href="https://stackoverflow.com/users/782862/christoph">
+			<img src="https://stackoverflow.com/users/flair/782862.png" width="208" height="58" alt="profile for christoph at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for christoph at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
 		</a>
 	</div>
+	<script type="text/javascript">
+		var qoutes = [
+			{ content:"If debugging is the process of removing software bugs, then programming must be the process of putting them in.", author:"Edsger Dijkstra" },
+			{ content:"It's not at all important to get it right the first time. It's vitally important to get it right the last time.", author:"Andrew Hunt and David Thomas" },
+			{ content:"Walking on water and developing software from a specification are easy if both are frozen.", author:"Edward V Berard" },
+			{ content:"[...] a computer is a stupid machine with the ability to do incredibly smart things, while computer programmers are smart people with the ability to do incredibly stupid things. They are, in short, a perfect match.", author:"Bill Bryson" },
+			{ content:"Beware of bugs in the above code; I have only proved it correct, not tried it.", author:"Donald E. Knuth" },
+			{ content:"Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code.", author:"Christopher Thompson" },
+			{ content:"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.", author:"Brian W. Kernighan" },
+			{ content:"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.", author:"Tom Cargill" },
+			{ content:"Good code is its own best documentation. As you're about to add a comment, ask yourself, 'How can I improve the code so that this comment isn't needed?' Improve the code and then document it to make it even clearer.", author:"Steve McConnell" },
+			{ content:"You can use an eraser on the drafting table or a sledgehammer on the construction site.", author:"Frank Lloyd Wright" },
+			{ content:"A clever person solves a problem. A wise person avoids it.", author:"Albert Einstein" },
+			{ content:"Hofstadter's Law: It always takes longer than you expect, even when you take into account Hofstadter's Law.", author:"Douglas Hofstadter" },
+			{ content:"Being a good software engineer is 3% talent, 97% not being distracted by the internet.", author:"unknown" },
+			{ content:"Testing can only prove the presence of bugs, not their absence.", author:"Edsger W. Dijkstra" },
+			{ content:"There, it should work now.", author:"any programmer" },
+			{ content:"Programs must be written for people to read, and only incidentally for machines to execute.", author:"Abelson / Sussman" },
+			{ content:"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author:"Martin Fowler" },
+			{ content:"Commenting your code is like cleaning your bathroom - you never want to do it, but it really does create a more pleasant experience for you and your guests.", author:"Ryan Campbell" },
+			{ content:"The fool wonders, the wise man asks.", author:"Benjamin Disraeli" },
+			{ content:"You can have the project: a) Done On Time, b) Done On Budget, c) Done Properly - Pick two.", author:"unknown" },
+			{ content:"Debuggers don't remove bugs. They only show them in slow motion.", author:"unknown" },
+		];
+		var index = Math.floor(Math.random() * qoutes.length); 
+		// vanilla js here. Everybody can do jquery.
+		document.getElementsByClassName("quote-content")[0].innerText = '"' + qoutes[index].content + '"';
+		document.getElementsByClassName("qoute-author")[0].innerText = '- by ' + qoutes[index].author;
+	</script>
 </body>
 </html>
