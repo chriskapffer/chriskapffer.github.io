@@ -44,7 +44,7 @@
 <body>
 	<div class="container">
 		<h4 class="quote-content">"a nerdy quotation to get your attention"</h4>
-		<p class="qoute-author">- by some author</p>
+		<p class="qoute-author">- some author</p>
 		<p>Refresh the page for another qoute. If you are here to check out some of my code have a look at my <a href="https://github.com/chriskapffer">profile</a>.</p>
 	</div>
 	<div class="so-flair-button">
@@ -79,7 +79,7 @@
 		var index = Math.floor(Math.random() * qoutes.length); 
 		// vanilla js here. Everybody can do jquery.
 		document.getElementsByClassName("quote-content")[0].innerText = '"' + qoutes[index].content + '"';
-		document.getElementsByClassName("qoute-author")[0].innerText = '- by ' + qoutes[index].author;
+		document.getElementsByClassName("qoute-author")[0].innerText = '- ' + qoutes[index].author;
 	</script>
 </body>
 </html>
